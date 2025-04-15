@@ -7,7 +7,7 @@ body {
   }
   
   header {
-    background: #6200ea;
+    background: #2a2335;
     padding: 1rem;
   }
   
@@ -26,8 +26,8 @@ body {
   .hero {
     padding: 3rem;
     text-align: center;
-    background: #bb86fc;
-    color: white;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
   }
   
   section {
@@ -57,7 +57,7 @@ body {
   footer {
     text-align: center;
     padding: 1rem;
-    background: #6200ea;
+    background: #2a2335;
     color: white;
   }
   

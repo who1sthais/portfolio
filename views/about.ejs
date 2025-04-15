@@ -1,6 +1,70 @@
 <%- include('partials/header') %>
-<section>
-  <h2>Sobre Mim</h2>
-  <p>Sou estudante de Tecnologia em Sistemas para Internet no IFB (5º semestre). Gosto de desenvolver soluções criativas com tecnologias como Node.js, React Native, Flutter, entre outras. Tenho espírito de liderança e gosto de trabalhar em equipe!</p>
+
+<section class="about py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Sobre Mim</h2>
+    <div class="row">
+      <div class="col-md-12" style="text-align: center;">
+        <p class="lead">Sou estudante de <strong>Tecnologia em Sistemas para Internet</strong> no IFB (Instituto Federal de Brasília), atualmente no 5º semestre. Tenho uma grande paixão por desenvolvimento de software, com foco em soluções criativas e inovadoras. Minhas principais linguagens e ferramentas incluem <strong>Node.js</strong>, <strong>React Native</strong>, <strong>Flutter</strong>, além de outras tecnologias como <strong>MySQL</strong> e <strong>JavaScript</strong>.</p>
+
+        <p>Tenho um espírito de liderança e sou apaixonada por trabalhar em equipe. Acredito que a troca de ideias é fundamental para o crescimento profissional e pessoal, e estou sempre em busca de novas oportunidades para aprender e colaborar em projetos que envolvam tecnologia, inovação e impacto social.</p>
+
+        <p>Meu objetivo é sempre desenvolver soluções que melhorem a vida das pessoas e contribuem para a evolução da sociedade. Durante minha jornada acadêmica, participei de vários projetos que me permitiram aplicar meus conhecimentos de maneira prática, sempre com o foco em entregar resultados de alta qualidade e com eficiência.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="skills py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Minhas Habilidades</h2>
+    <ul class="list-unstyled row">
+      <li class="col-md-4 mb-3">
+        <strong>Desenvolvimento Web</strong> - Utilizo HTML, CSS, JavaScript, Node.js para criar soluções dinâmicas e funcionais.
+      </li>
+      <li class="col-md-4 mb-3">
+        <strong>Desenvolvimento Mobile</strong> - Desenvolvimento de apps móveis com React Native e Flutter.
+      </li>
+      <li class="col-md-4 mb-3">
+        <strong>Banco de Dados</strong> - Experiência com MySQL e integração com sistemas web.
+      </li>
+      <li class="col-md-4 mb-3">
+        <strong>Versionamento de Código</strong> - Uso do Git para versionamento de código e colaboração em equipe.
+      </li>
+      <li class="col-md-4 mb-3">
+        <strong>Trabalho em Equipe</strong> - Colaboro ativamente em projetos de equipe, com boa comunicação e organização.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="projects py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Meus Projetos</h2>
+    <p class="text-center mb-4">Aqui estão alguns projetos nos quais trabalhei recentemente e que demonstram minhas habilidades práticas em programação e desenvolvimento de software.</p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <% if (projects && projects.length > 0) { %>
+        <% projects.forEach(project => { %>
+          <div class="col">
+            <div class="card h-100">
+              <img src="/img/<%= project.image %>" class="card-img-top" alt="<%= project.title %>">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title"><%= project.title %></h5>
+                <p class="card-text"><%= project.description %></p>
+                <p><strong>Tecnologias:</strong> <%= project.tech.join(', ') %></p>
+                <a href="<%= project.link %>" class="btn btn-primary mt-auto">Ver mais</a>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p class="text-center">Nenhum projeto disponível no momento.</p>
+      <% } %>
+      
+    </div>
+  </div>
+</section>
+
+
 <%- include('partials/footer') %>
